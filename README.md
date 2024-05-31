@@ -1,5 +1,5 @@
 # Android无障碍信息节点例子
-此实例项目将指导您如何为自己的View添加更详细的无障碍信息，以更好的辅助视听缺陷用户和自动化系统使用您的App。
+此实例项目将指导您如何为自己的View添加更详细的无障碍信息，以便视听缺陷用户和自动化系统使用您的App。
 
 特别适合使用SurfaceView或者自定义绘制View内容的情况。
 
@@ -26,7 +26,7 @@ override fun getAccessibilityNodeProvider(): AccessibilityNodeProvider {
 override fun createAccessibilityNodeInfo(virtualViewId: Int): AccessibilityNodeInfo? {
             //HOST_VIEW_ID则为SecureTestView自身，我们需要为其创建AccessibilityNodeInfo
             if (virtualViewId == HOST_VIEW_ID) {
-                val nodeInfo = AccessibilityNodeInfo.obtain(this@SecureTestView)
+                val nodeInfo = AccessibilityNodeInfo.obtain(this@MyView)
                 //需要手动调用原onInitializeAccessibilityNodeInfo方法，否则数据不会得到填充
                 onInitializeAccessibilityNodeInfo(nodeInfo)
                 return nodeInfo
