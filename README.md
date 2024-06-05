@@ -24,7 +24,7 @@ override fun getAccessibilityNodeProvider(): AccessibilityNodeProvider {
 3.在自己的AccessibilityNodeProvider中，提供自己的View及交互节点的虚拟id的AccessibilityNodeInfo：
 ```Kotlin
 override fun createAccessibilityNodeInfo(virtualViewId: Int): AccessibilityNodeInfo? {
-            //HOST_VIEW_ID则为SecureTestView自身，我们需要为其创建AccessibilityNodeInfo
+            //HOST_VIEW_ID则为MyView自身，我们需要为其创建AccessibilityNodeInfo
             if (virtualViewId == HOST_VIEW_ID) {
                 val nodeInfo = AccessibilityNodeInfo.obtain(this@MyView)
                 //需要手动调用原onInitializeAccessibilityNodeInfo方法，否则数据不会得到填充
